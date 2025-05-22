@@ -1,8 +1,6 @@
-// This script fetches data from the Codeforces API and generates a roast using the DeepSeek API.
-
-//This function fetches data from the DeepSeek API using the Fetch API.
 async function getDatafromDeepSeek(msg) {
-    const apiKey = '<HIDDEN>'; // Never expose secret keys in production!
+    const data1 = process.env.DEEPSEEKAPIKEY;
+    const apiKey = data1.roast;
     const response = await fetch('https://api.deepseek.com/v1/chat/completions', {
         method: 'POST',
         headers: {
@@ -17,7 +15,6 @@ async function getDatafromDeepSeek(msg) {
     const data = await response.json();
     return data.choices[0].message.content;
 }
-
 // This function fetches data from the given url using the Fetch API.
 async function getDataFromApi(url) {
   try {
@@ -95,11 +92,15 @@ async function roastAndShowUser() {
 
         // Show the roast
         console.log(roast);
-        var roastResponse = await getDatafromDeepSeek(roast);
-        roastResponse = roastResponse.replace(/\*/g, ''); 
-        roastResponse = roastResponse.replace(/#/g, '');
-        console.log(roastResponse);
-        document.getElementById("roast").innerText = roastResponse;
+        getDatafromDeepSeek(roast).then((roast) => {
+            var roastData = data.roast;
+            //delete all * and # characters from data.roast
+            roastData = roastData.replace(/[\*#]/g, '');
+            document.getElementById("roast").innerText = roastData;
+        });
+        
+        
+
 
     } catch (error) {
         console.log("Error: ", error);
