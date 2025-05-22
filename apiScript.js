@@ -2,7 +2,7 @@
 
 //This function fetches data from the DeepSeek API using the Fetch API.
 async function getDatafromDeepSeek(msg) {
-    const apiKey = 'sk-e4540ff7a92b4b2ab4161329d3c146b9'; // Never expose secret keys in production!
+    const apiKey = '<HIDDEN>'; // Never expose secret keys in production!
     const response = await fetch('https://api.deepseek.com/v1/chat/completions', {
         method: 'POST',
         headers: {
