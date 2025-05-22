@@ -1,0 +1,55 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+h1 {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+h2 {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    border-bottom: #333 1px solid;
+    padding-bottom: 10px;
+}
+p {
+    font-size: 14px;
+    text-align: center;
+    color: #666;
+}
+.input {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.header {
+    background-color: #c2caff;
+    color: white;
+    padding: 10px;
+    border: #333 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header img {
+    height: 80px; /* Adjust as needed */
+    margin-right: 20px;
+    display: block;
+}
+
+.inner {
+    flex: 1;
+    text-align: center;
+}
+.roastClass {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 20px auto;
+    width: 80%;
+}
